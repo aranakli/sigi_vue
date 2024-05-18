@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import CategoriaView from '../views/Categoria.vue'
-import ProductoView from '../views/Producto.vue'
-import TransaccionView from '../views/Transaccion.vue'
-import Proveedores from '../views/proveedores.vue'
-import Inventarios from '../views/inventarios.vue'
+import HomeView from '../views/HomeView.vue';
+import CategoriaView from '../views/Categoria.vue';
+import ProductoView from '../views/Producto.vue';
+import TransaccionView from '../views/Transaccion.vue';
+import Proveedores from '../views/Proveedores.vue';
+// import Inventarios from '../views/inventarios.vue'
 
 const routes = [
   {
@@ -14,14 +14,14 @@ const routes = [
   },
   {
     path: '/proveedores',
-    name: 'Proveedores',
+    name: 'Proveedor',
     component: Proveedores
   },
-  {
-    path: '/inventarios',
-    name: 'Inventarios',
-    component: Inventarios
-  },
+  // {
+  //   path: '/inventarios',
+  //   name: 'Inventario',
+  //   component: Inventarios
+  // },
   {
     path: '/about',
     name: 'about',
