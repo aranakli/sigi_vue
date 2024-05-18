@@ -4,7 +4,7 @@ import CategoriaView from '../views/Categoria.vue';
 import ProductoView from '../views/Producto.vue';
 import TransaccionView from '../views/Transaccion.vue';
 import Proveedores from '../views/Proveedores.vue';
-// import Inventarios from '../views/inventarios.vue'
+import Inventarios from '../views/Inventarios.vue'
 
 const routes = [
   {
@@ -17,11 +17,11 @@ const routes = [
     name: 'Proveedor',
     component: Proveedores
   },
-  // {
-  //   path: '/inventarios',
-  //   name: 'Inventario',
-  //   component: Inventarios
-  // },
+  {
+    path: '/inventarios',
+    name: 'Inventario',
+    component: Inventarios
+  },
   {
     path: '/about',
     name: 'about',

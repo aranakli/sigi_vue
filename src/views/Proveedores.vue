@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1 class="text-start">Proveedores list |
+        <h1 class="text-start">Lista de Proveedores |
             <button @click="newProveedor()" class="btn btn-success mx-2">
                 <font-awesome-icon icon="plus" />
             </button>
@@ -9,22 +9,21 @@
             <thead>
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Contacto</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(proveedores, index) in proveedores" :key="index">
-                    <th scope="row"> {{ index + 1 }}</th>
-                    <td>{{ proveedores.id }}</td>
-                    <td>{{ proveedores.nombre }}</td>
-                    <td>{{ proveedores.contacto }}</td>
+                <tr v-for="(proveedor, index) in proveedores" :key="index">
+                    <td>{{ proveedor.id }}</td>
+                    <td>{{ proveedor.nombre }}</td>
+                    <td>{{ proveedor.contacto }}</td>
                     <td>
-                        <button @click="deleteProveedor(proveedores.id)" class="btn btn-danger mx-2">
+                        <button @click="deleteProveedor(proveedor.id)" class="btn btn-danger mx-2">
                             <font-awesome-icon icon="trash" />
                         </button>
-                        <button @click="editProveedor(proveedores.id)" class="btn btn-warning mx-2">
+                        <button @click="editProveedor(proveedor.id)" class="btn btn-warning mx-2">
                             <font-awesome-icon icon="pencil" />
                         </button>
                     </td>
@@ -42,7 +41,7 @@ export default {
     name: 'Proveedor',
     data() {
         return {
-            Proveedores: []
+            proveedores: []
         }
     },
     methods: {

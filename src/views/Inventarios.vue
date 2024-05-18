@@ -9,22 +9,23 @@
             <thead>
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Contacto</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Proveedor</th>
+                    <th scope="col">Cantidad</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(inventarios, index) in inventarios" :key="index">
-                    <th scope="row"> {{ index + 1 }}</th>
-                    <td>{{ inventarios.id }}</td>
-                    <td>{{ inventarios.nombre }}</td>
-                    <td>{{ inventarios.contacto }}</td>
+                <tr v-for="(inventario, index) in inventarios" :key="index">
+                    <td>{{ inventario.id }}</td>
+                    <td>{{ inventario.producto_id }}</td>
+                    <td>{{ inventario.proveedor_id }}</td>
+                    <td>{{ inventario.cantidad }}</td>
                     <td>
-                        <button @click="deleteInventario(inventarios.id)" class="btn btn-danger mx-2">
+                        <button @click="deleteInventario(inventario.id)" class="btn btn-danger mx-2">
                             <font-awesome-icon icon="trash" />
                         </button>
-                        <button @click="editInventario(inventarios.id)" class="btn btn-warning mx-2">
+                        <button @click="editInventario(inventario.id)" class="btn btn-warning mx-2">
                             <font-awesome-icon icon="pencil" />
                         </button>
                     </td>
@@ -42,7 +43,7 @@ export default {
     name: 'Inventario',
     data() {
         return {
-            Inventarios: []
+            inventarios: []
         }
     },
     methods: {
