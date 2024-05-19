@@ -74,10 +74,10 @@ export default {
         }
     },
     mounted() {
-        // axios.get(`http://127.0.0.1:8000/api/categories/`)
-        //     .then(response => {
-        //         this.categories = response.data.categories
-        //     })
+         axios.get(`http://127.0.0.1:8000/api/categories/`)
+             .then(response => {
+                 this.categories = response.data.categories
+             })
     }
 }
 </script>
