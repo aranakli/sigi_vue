@@ -1,4 +1,4 @@
-<template>
+2<template>
     <div class="container text-start">
         <h1 class="text-primary fw-bold"> Nuevo</h1>
         <div class="card">

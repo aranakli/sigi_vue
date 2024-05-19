@@ -1,9 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue';
-import CategoriaView from '../views/Categoria.vue';
-import ProductoView from '../views/Producto.vue';
-import TransaccionView from '../views/Transaccion.vue';
 import Proveedores from '../views/Proveedores.vue';
 import NewProveedores from '../components/Proveedor/NewProveedor.vue';
 import EditProveedores from '../components/Proveedor/EditProveedor.vue';
@@ -14,6 +11,8 @@ import EditProducto from '../components/Producto/EditProducto.vue';
 import NewTransaccion from '../components/Transaccion/NewTransaccion.vue';
 import EditTransaccion from '../components/Transaccion/EditTransaccion.vue';
 import Inventarios from '../views/Inventarios.vue';
+import NewInventarios from '../components/Inventario/NewInventario.vue';
+import EditInventarios from '../components/Inventario/EditInventario.vue';
 
 const routes = [
   {
@@ -72,6 +71,16 @@ const routes = [
     component: Inventarios
   },
   {
+    path: '/new-inventarios',
+    name: 'NewInventario',
+    component: NewInventarios
+  },
+  {
+    path: '/edit-inventarios/:id',
+    name: 'EditInventario',
+    component: EditInventarios
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
@@ -79,21 +88,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
-  {
-    path: '/categorias',
-    name: 'Categoria',
-    component: CategoriaView
-  },
-  {
-    path: '/productos',
-    name: 'Producto',
-    component: ProductoView
-  },
-  {
-    path: '/transacciones',
-    name: 'Transaccion',
-    component: TransaccionView
-  }
 ]
 
 const router = createRouter({

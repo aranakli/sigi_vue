@@ -18,8 +18,8 @@
             <tbody>
                 <tr v-for="(inventario, index) in inventarios" :key="index">
                     <td>{{ inventario.id }}</td>
-                    <td>{{ inventario.producto_id }}</td>
-                    <td>{{ inventario.proveedor_id }}</td>
+                    <td>{{ inventario.producto_nombre }}</td>
+                    <td>{{ inventario.proveedor_nombre }}</td>
                     <td>{{ inventario.cantidad }}</td>
                     <td>
                         <button @click="deleteInventario(inventario.id)" class="btn btn-danger mx-2">
