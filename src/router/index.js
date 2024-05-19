@@ -1,10 +1,13 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+
 import HomeView from '../views/HomeView.vue';
 import CategoriaView from '../views/Categoria.vue';
 import ProductoView from '../views/Producto.vue';
 import TransaccionView from '../views/Transaccion.vue';
 import Proveedores from '../views/Proveedores.vue';
-import Inventarios from '../views/Inventarios.vue'
+import NewProveedores from '../components/Proveedor/NewProveedor.vue';
+import EditProveedores from '../components/Proveedor/EditProveedor.vue';
+import Inventarios from '../views/Inventarios.vue';
 
 const routes = [
   {
@@ -16,6 +19,16 @@ const routes = [
     path: '/proveedores',
     name: 'Proveedor',
     component: Proveedores
+  },
+  {
+    path: '/new-proveedores',
+    name: 'NewProveedor',
+    component: NewProveedores
+  },
+  {
+    path: '/edit-proveedores/:id',
+    name: 'EditProveedor',
+    component: EditProveedores
   },
   {
     path: '/inventarios',

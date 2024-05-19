@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1 class="text-start">Inventarios list |
+        <h1 class="text-start">Inventario |
             <button @click="newInventario()" class="btn btn-success mx-2">
                 <font-awesome-icon icon="plus" />
             </button>

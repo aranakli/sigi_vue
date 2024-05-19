@@ -53,26 +53,26 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     axios.delete(`http://127.0.0.1:8000/api/proveedores/${id}`)
-                    .then(response => {
-                        if (response.data.success) {
-                            Swal.fire('Delete !! ', '', 'success')
-                            this.proveedores = response.data.proveedores
-                        }
-                    })
+                        .then(response => {
+                            if (response.data.success) {
+                                Swal.fire('Delete !! ', '', 'success')
+                                this.proveedores = response.data.proveedores
+                            }
+                        })
                 }
             })
         },
         editProveedor(id) {
-            this.$router.push({name: 'EditProveedor', params: { id: `${id}` }} )
+            this.$router.push({ name: 'EditProveedor', params: { id: `${id}` } })
         },
         newProveedor() {
-            this.$router.push({name: 'NewProveedor'});
+            this.$router.push({ name: 'NewProveedor' });
         }
     },
     mounted() {
         axios
             .get('http://127.0.0.1:8000/api/proveedores')
             .then(response => (this.proveedores = response.data.proveedores))
-    },
+    }
 }
 </script>
