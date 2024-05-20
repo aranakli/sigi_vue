@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="descripcion" class="form-label">Descripcion : </label>
+                        <label for="descripcion" class="form-label">Descripción : </label>
                         <div class="input-group">
                             <div class="input-group-text"> <font-awesome-icon icon="building" /> </div>
                             <input type="text" class="form-control" id="descripcion" placeholder="Descripción de la categoria"
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <button class="btn btn-primary" type="submit">Actualizar</button>
-                    <button class="btn btn-secundary mx-2" @click="cancel">Cancelar</button>
+                    <button class="btn btn-secundary mx-2" @click="cancel">Cancel</button>
                 </form>
             </div>
         </div>
@@ -50,9 +50,8 @@ export default {
             categoria: {
                 id: 0,
                 nombre: '',
-                descripcion: ''
-            },
-            categorias: [],
+                contacto: ''
+            }
         }
     },
     methods: {
@@ -66,7 +65,7 @@ export default {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'La categoria ha sido guardado',
+                    title: 'El categoria ha sido guardado',
                     showConfirmButton: false,
                     timer: 2000
                 })
@@ -74,8 +73,6 @@ export default {
         }
     },
 
-
-    
     mounted() {
         this.categoria.id = this.$route.params.id;
         axios.get(`http://127.0.0.1:8000/api/categorias/${this.categoria.id}`)

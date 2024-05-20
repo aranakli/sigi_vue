@@ -64,7 +64,7 @@
         });
       },
       editCategoria(id) {
-        this.$router.push({ name: 'EditCategoria', params: { id: id } });
+        this.$router.push({ name: 'EditCategoria', params: { id: `${id}` }});
       },
       newCategoria() {
         this.$router.push({ name: 'NewCategoria' });
