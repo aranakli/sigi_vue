@@ -23,7 +23,7 @@
             <td>{{ producto.nombre }}</td>
             <td>{{ producto.descripcion }}</td>
             <td>{{ producto.precio }}</td>
-            <td>{{ producto.categoria_id }}</td>
+            <td>{{ producto.categoria_nombre }}</td>
             <td>
               <button @click="deleteProducto(producto.id)" class="btn btn-danger mx-2">
                 <font-awesome-icon icon="trash" />
@@ -58,12 +58,12 @@
         }).then((result) => {
           if (result.isConfirmed) {
             axios.delete(`http://127.0.0.1:8000/api/productos/${id}`)
-              .then(response => {
-                if (response.data.success) {
-                  Swal.fire('Deleted!', '', 'success');
-                  this.productos = response.data.productos;
-                }
-              });
+                    .then(response => {
+                        if (response.data.success) {
+                            Swal.fire('Delete !! ', '', 'success')
+                            this.productos = response.data.productos
+                        }
+                    })
           }
         });
       },
@@ -75,9 +75,10 @@
       }
     },
     mounted() {
-      axios.get('http://127.0.0.1:8000/api/productos')
-        .then(response => (this.productos = response.data.productos));
-    }
+      axios
+      .get('http://127.0.0.1:8000/api/productos')
+      .then(response => (this.productos = response.data.productos));
+    },
   };
   </script>
   

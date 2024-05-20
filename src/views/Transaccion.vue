@@ -75,9 +75,10 @@
       }
     },
     mounted() {
-      axios.get('http://127.0.0.1:8000/api/transacciones')
-        .then(response => (this.transacciones = response.data.transacciones));
-    }
+      axios
+      .get('http://127.0.0.1:8000/api/transacciones')
+      .then(response => (this.transacciones = response.data.transacciones));
+    },
   };
   </script>
   
