@@ -13,6 +13,9 @@ import EditTransaccion from '../components/Transaccion/EditTransaccion.vue';
 import Inventarios from '../views/Inventarios.vue';
 import NewInventarios from '../components/Inventario/NewInventario.vue';
 import EditInventarios from '../components/Inventario/EditInventario.vue';
+import Categoria from '../views/Categoria.vue';
+import Producto from '../views/Producto.vue';
+import Transaccion from '../views/Transaccion.vue';
 
 const routes = [
   {
@@ -56,13 +59,28 @@ const routes = [
     component: EditProducto
   },
   {
+    path: '/categorias',
+    name: 'Categoria',
+    component: Categoria
+  },
+  {
+    path: '/productos',
+    name: 'Producto',
+    component: Producto
+  },
+  {
+    path: '/transacciones',
+    name: 'Transaccion',
+    component: Transaccion
+  },
+  {
     path: '/new-transacciones',
-    name: 'NewTransacciones',
+    name: 'NewTransaccion',
     component: NewTransaccion
   },
   {
     path: '/edit-transacciones/:id',
-    name: 'EditTransacciones',
+    name: 'EditTransaccion',
     component: EditTransaccion
   },
   {

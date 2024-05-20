@@ -71,9 +71,10 @@
       }
     },
     mounted() {
-      axios.get('http://127.0.0.1:8000/api/categorias')
-        .then(response => (this.categorias = response.data.categorias));
-    }
+      axios
+      .get('http://127.0.0.1:8000/api/categorias')
+      .then(response => (this.categorias = response.data.categorias));
+    },
   };
   </script>
   
