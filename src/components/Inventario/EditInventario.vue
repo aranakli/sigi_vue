@@ -11,8 +11,8 @@
                         <label for="id" class="form-label">Id Item del Inventario </label>
                         <div class="input-group">
                             <div class="input-group-text"> <font-awesome-icon icon="tag" /> </div>
-                            <input type="text" class="form-control" id="id" placeholder="Id Item"
-                                disabled v-model='inventario.id'>
+                            <input type="text" class="form-control" id="id" placeholder="Id Item" disabled
+                                v-model='inventario.id'>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -20,7 +20,8 @@
                         <div class="input-group">
                             <div class="input-group-text"> <font-awesome-icon icon="user" /> </div>
                             <select class="form-select" v-model="inventario.producto_id">
-                                <option v-for="producto in productos" v-bind:value="producto.id">{{ producto.nombre }}</option>
+                                <option v-for="producto in productos" v-bind:value="producto.id">{{ producto.nombre }}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -29,7 +30,8 @@
                         <div class="input-group">
                             <div class="input-group-text"> <font-awesome-icon icon="user" /> </div>
                             <select class="form-select" v-model="inventario.proveedor_id">
-                                <option v-for="proveedor in proveedores" v-bind:value="proveedor.id">{{ proveedor.nombre }}</option>
+                                <option v-for="proveedor in proveedores" v-bind:value="proveedor.id">{{ proveedor.nombre
+                                    }}</option>
                             </select>
                         </div>
                     </div>
@@ -63,8 +65,8 @@ export default {
                 proveedor_id: 0,
                 cantidad: 0
             },
-            proveedores: [],
             productos: [],
+            proveedores: [],
         }
     },
     methods: {
@@ -74,7 +76,7 @@ export default {
         async updateInventario() {
             const res = await axios.put(`http://127.0.0.1:8000/api/inventarios/${this.inventario.id}`, this.inventario)
             if (res.status == 200) {
-                this.$router.push({name: 'Inventario'})
+                this.$router.push({ name: 'Inventario' })
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -87,36 +89,13 @@ export default {
     },
 
     mounted() {
-    this.inventario.id = this.$route.params.id;
-    axios.get(`http://127.0.0.1:8000/api/inventarios/${this.inventario.id}`)
-        .then(response => {
-            console.log('Proveedores antes de asignar:', response.data.proveedores);
-            this.inventario = response.data.inventario;
-            this.proveedores = response.data.proveedores;
-            this.productos = response.data.productos;
-            console.log('Proveedores después de asignar:', this.proveedores); // Verifica los proveedores después de asignar
-            console.log('inventario después de asignar:', this.inventario); // Verifica los proveedores después 
-            console.log('productos después de asignar:', this.productos); // Verifica los proveedores después 
-        })
-        .catch(error => {
-            console.error('Error al obtener datos del inventario:', error);
-        });
-}
-
-
-
-
-
-
-
-    // mounted() {
-    //     this.inventario.id = this.$route.params.id;
-    //     axios.get(`http://127.0.0.1:8000/api/inventarios/${this.inventario.id}`)
-    //         .then(response => {
-    //             this.inventario = response.data.inventario;
-    //             this.proveedores = response.data.proveedores;
-    //             this.productos = response.data.productos;
-    //         })
-    // }
+        this.inventario.id = this.$route.params.id;
+        axios.get(`http://127.0.0.1:8000/api/inventarios/${this.inventario.id}`)
+            .then(response => {
+                this.inventario = response.data.inventario;
+                this.proveedores = response.data.proveedores;
+                this.productos = response.data.productos;
+            })
+    }
 }
 </script>
