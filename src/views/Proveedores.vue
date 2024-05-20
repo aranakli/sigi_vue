@@ -47,7 +47,7 @@ export default {
     methods: {
         deleteProveedor(id) {
             Swal.fire({
-                title: `Usted quiere eliminar el provvedor ${id}?`,
+                title: `Usted quiere eliminar el proveedor ${id}?`,
                 showCancelButton: true,
                 confirmButtonText: 'Delete',
             }).then((result) => {

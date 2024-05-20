@@ -49,26 +49,26 @@ export default {
     methods: {
         deleteInventario(id) {
             Swal.fire({
-                title: `Usted quiere eliminar el provvedor ${id}?`,
+                title: `Usted quiere eliminar el item de inventario ${id}?`,
                 showCancelButton: true,
                 confirmButtonText: 'Delete',
             }).then((result) => {
                 if (result.isConfirmed) {
                     axios.delete(`http://127.0.0.1:8000/api/inventarios/${id}`)
-                    .then(response => {
-                        if (response.data.success) {
-                            Swal.fire('Delete !! ', '', 'success')
-                            this.inventarios = response.data.inventarios
-                        }
-                    })
+                        .then(response => {
+                            if (response.data.success) {
+                                Swal.fire('Delete !! ', '', 'success')
+                                this.inventarios = response.data.inventarios
+                            }
+                        })
                 }
             })
         },
         editInventario(id) {
-            this.$router.push({name: 'EditInventario', params: { id: `${id}` }} )
+            this.$router.push({ name: 'EditInventario', params: { id: `${id}` } })
         },
         newInventario() {
-            this.$router.push({name: 'NewInventario'});
+            this.$router.push({ name: 'NewInventario' });
         }
     },
     mounted() {
