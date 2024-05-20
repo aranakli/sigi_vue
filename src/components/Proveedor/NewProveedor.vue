@@ -1,6 +1,6 @@
 <template>
     <div class="container text-start">
-        <h1 class="text-primary fw-bold"> Nuevo</h1>
+        <h1 class="text-primary fw-bold"> Nuevo proveedor</h1>
         <div class="card">
             <div class="card-header fw-bold">
                 Proveedor
@@ -74,9 +74,9 @@ export default {
         }
     },
     mounted() {
-         axios.get(`http://127.0.0.1:8000/api/categories/`)
+         axios.get(`http://127.0.0.1:8000/api/proveedores/`)
              .then(response => {
-                 this.categories = response.data.categories
+                 this.proveedores = response.data.proveedores
              })
     }
 }

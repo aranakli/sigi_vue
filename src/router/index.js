@@ -2,17 +2,17 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue';
 import Proveedores from '../views/Proveedores.vue';
-import NewProveedores from '../components/Proveedor/NewProveedor.vue';
-import EditProveedores from '../components/Proveedor/EditProveedor.vue';
-import NewCategoria from '../components/Categoria/NewCategoria.vue';
-import EditCategoria from '../components/Categoria/EditCategoria.vue';
-import NewProducto from '../components/Producto/NewProducto.vue';
-import EditProducto from '../components/Producto/EditProducto.vue';
-import NewTransaccion from '../components/Transaccion/NewTransaccion.vue';
-import EditTransaccion from '../components/Transaccion/EditTransaccion.vue';
+import NewProveedor from '../components/Proveedor/NewProveedor.vue';
+import EditProveedor from '../components/Proveedor/EditProveedor.vue';
+// import NewCategoria from '../components/Categoria/NewCategoria.vue';
+// import EditCategoria from '../components/Categoria/EditCategoria.vue';
+// import NewProducto from '../components/Producto/NewProducto.vue';
+// import EditProducto from '../components/Producto/EditProducto.vue';
+// import NewTransaccion from '../components/Transaccion/NewTransaccion.vue';
+// import EditTransaccion from '../components/Transaccion/EditTransaccion.vue';
 import Inventarios from '../views/Inventarios.vue';
-import NewInventarios from '../components/Inventario/NewInventario.vue';
-import EditInventarios from '../components/Inventario/EditInventario.vue';
+import NewInventario from '../components/Inventario/NewInventario.vue';
+import EditInventario from '../components/Inventario/EditInventario.vue';
 
 const routes = [
   {
@@ -28,43 +28,43 @@ const routes = [
   {
     path: '/new-proveedores',
     name: 'NewProveedor',
-    component: NewProveedores
+    component: NewProveedor
   },
   {
     path: '/edit-proveedores/:id',
     name: 'EditProveedor',
-    component: EditProveedores
+    component: EditProveedor
   },
-  {
-    path: '/new-categorias',
-    name: 'NewCategoria',
-    component: NewCategoria
-  },
-  {
-    path: '/edit-categorias/:id',
-    name: 'EditCategoria',
-    component: EditCategoria
-  },
-  {
-    path: '/new-productos',
-    name: 'NewProducto',
-    component: NewProducto
-  },
-  {
-    path: '/edit-productos/:id',
-    name: 'EditProducto',
-    component: EditProducto
-  },
-  {
-    path: '/new-transacciones',
-    name: 'NewTransacciones',
-    component: NewTransaccion
-  },
-  {
-    path: '/edit-transacciones/:id',
-    name: 'EditTransacciones',
-    component: EditTransaccion
-  },
+  // {
+  //   path: '/new-categorias',
+  //   name: 'NewCategoria',
+  //   component: NewCategoria
+  // },
+  // {
+  //   path: '/edit-categorias/:id',
+  //   name: 'EditCategoria',
+  //   component: EditCategoria
+  // },
+  // {
+  //   path: '/new-productos',
+  //   name: 'NewProducto',
+  //   component: NewProducto
+  // },
+  // {
+  //   path: '/edit-productos/:id',
+  //   name: 'EditProducto',
+  //   component: EditProducto
+  // },
+  // {
+  //   path: '/new-transacciones',
+  //   name: 'NewTransacciones',
+  //   component: NewTransaccion
+  // },
+  // {
+  //   path: '/edit-transacciones/:id',
+  //   name: 'EditTransacciones',
+  //   component: EditTransaccion
+  // },
   {
     path: '/inventarios',
     name: 'Inventario',
@@ -73,12 +73,12 @@ const routes = [
   {
     path: '/new-inventarios',
     name: 'NewInventario',
-    component: NewInventarios
+    component: NewInventario
   },
   {
     path: '/edit-inventarios/:id',
     name: 'EditInventario',
-    component: EditInventarios
+    component: EditInventario
   },
   {
     path: '/about',

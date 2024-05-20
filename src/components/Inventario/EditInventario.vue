@@ -63,8 +63,8 @@ export default {
                 proveedor_id: 0,
                 cantidad: 0
             },
-            proveedores: [],
             productos: [],
+            proveedores: [],
         }
     },
     methods: {
@@ -102,11 +102,6 @@ export default {
             console.error('Error al obtener datos del inventario:', error);
         });
 }
-
-
-
-
-
 
 
     // mounted() {
